@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+
+{% if not todos %}
+
+<div class="container-home">
+    <div class="row">
+        <div class="col-md-8 offset-md-4 my-2 my-md-5">
+            <div class="sobst">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% else %}
+
+<div class="container-home ">
+    <div class="row">
+        <div class="col-md-8 offset-md-4 my-2 my-md-5">
+            {% for todo in todos %}
+            <div class="text-decoration-none bg-success text-white py-2 py-md-4 px-5 mt-1">
+                <a class="text-decoration-none text-white" href="{{ todo.get_absolute_url }}">{{ todo.name }}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endif %}
+{% endif %}
+{% endblock %}

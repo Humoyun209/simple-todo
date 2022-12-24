@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+
+{% if not todos %}
+
+<div class="container-home">
+    <div class="row">
+        <div class="col-md-8 offset-md-4 my-2 my-md-5">
+            <div class="sobst">
+                <p>You don't have any plans right now.</p>
+                <p>You are here You can plan your work</p>
+                <p>Let's go Brother.</p>
+                <a href="{% url 'create' %}"><button class="btn btn-primary cusbtn">Let's go</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% else %}
+
+<div class="container-home ">
+    <div class="row">
+        <div class="col-md-8 offset-md-4 my-2 my-md-5">
+            <div>
+                {% for todo in todos %}
+                {% if todo.important %}
+                <div class="bg-danger important-todo py-2 py-md-4 px-5 mt-1 text-white"><a href="{{ todo.get_absolute_url }}">{{ todo.name }}</a></div>
+                {% else %}
+                <div class=" bg-light simple-todo py-2 py-md-4 px-5 mt-1"><a href="{{ todo.get_absolute_url }}">{{ todo.name }}</a></div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endif %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,57 @@
+.bg-yellow {
+    background: #ffeb3b!important;
+}
+
+body {
+    font-family: 'Chivo Mono', monospace;
+}
+.nav-span a{
+    text-decoration: none;
+    color: #5c636a;
+}
+.nav-span a:hover {
+    color: black;
+}
+
+.container-home {
+    width: 70%!important;
+    text-align: center!important;
+    vertical-align: middle;
+}
+
+.cusbtn {
+    text-align: center!important;
+    width: 60% !important;
+}
+
+.sobst {
+    text-align: center;
+    vertical-align: middle;!important;
+}
+
+.important-todo {
+    background: #f06292;
+}
+
+.simple-todo {
+    background: lightcyan;
+}
+
+
+.simple-todo a {
+    text-decoration: none;
+    color: #5c636a;
+}
+
+.important-todo a {
+    text-decoration: none;
+    color: white;
+}
+
+.bg-green {
+    background-color: lawngreen!important;
+}
+
+.todo-success a{
+    text-decoration: underline;
+}

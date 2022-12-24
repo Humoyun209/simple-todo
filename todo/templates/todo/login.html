@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="my-3 text-center">Login</h1>
+<form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+                <div class="form-group mt-2">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    <div class="invalid-feedback">
+                        {{ field.errors }}
+                    </div>
+                </div>
+            {% endfor%}
+    <button type="submit" class="mt-4 btn btn-primary" style="width: 15%;">Send</button>
+{% endblock content %}
